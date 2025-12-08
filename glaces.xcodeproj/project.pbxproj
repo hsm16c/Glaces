@@ -14,6 +14,9 @@
 		9FE33BD82EE6CD320001AAA5 /* glacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BD72EE6CD320001AAA5 /* glacesTests.swift */; };
 		9FE33BE22EE6CD320001AAA5 /* glacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BE12EE6CD320001AAA5 /* glacesUITests.swift */; };
 		9FE33BE42EE6CD320001AAA5 /* glacesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BE32EE6CD320001AAA5 /* glacesUITestsLaunchTests.swift */; };
+		9FE33BF22EE6D8D40001AAA5 /* GlacesTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BF12EE6D8D40001AAA5 /* GlacesTypes.swift */; };
+		9FE33BF42EE6DA590001AAA5 /* Parfum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BF32EE6DA590001AAA5 /* Parfum.swift */; };
+		9FE33BF62EE6DBC20001AAA5 /* GlacesOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BF52EE6DBC20001AAA5 /* GlacesOrder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		9FE33BDD2EE6CD320001AAA5 /* glacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = glacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE33BE12EE6CD320001AAA5 /* glacesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = glacesUITests.swift; sourceTree = "<group>"; };
 		9FE33BE32EE6CD320001AAA5 /* glacesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = glacesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9FE33BF12EE6D8D40001AAA5 /* GlacesTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlacesTypes.swift; sourceTree = "<group>"; };
+		9FE33BF32EE6DA590001AAA5 /* Parfum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parfum.swift; sourceTree = "<group>"; };
+		9FE33BF52EE6DBC20001AAA5 /* GlacesOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlacesOrder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,7 @@
 		9FE33BC42EE6CD300001AAA5 /* glaces */ = {
 			isa = PBXGroup;
 			children = (
+				9FE33BF02EE6D87D0001AAA5 /* Model */,
 				9FE33BC52EE6CD300001AAA5 /* glacesApp.swift */,
 				9FE33BC72EE6CD300001AAA5 /* ContentView.swift */,
 				9FE33BC92EE6CD320001AAA5 /* Assets.xcassets */,
@@ -127,6 +134,16 @@
 				9FE33BE32EE6CD320001AAA5 /* glacesUITestsLaunchTests.swift */,
 			);
 			path = glacesUITests;
+			sourceTree = "<group>";
+		};
+		9FE33BF02EE6D87D0001AAA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9FE33BF12EE6D8D40001AAA5 /* GlacesTypes.swift */,
+				9FE33BF32EE6DA590001AAA5 /* Parfum.swift */,
+				9FE33BF52EE6DBC20001AAA5 /* GlacesOrder.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +277,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FE33BC82EE6CD300001AAA5 /* ContentView.swift in Sources */,
+				9FE33BF22EE6D8D40001AAA5 /* GlacesTypes.swift in Sources */,
+				9FE33BF42EE6DA590001AAA5 /* Parfum.swift in Sources */,
 				9FE33BC62EE6CD300001AAA5 /* glacesApp.swift in Sources */,
+				9FE33BF62EE6DBC20001AAA5 /* GlacesOrder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
