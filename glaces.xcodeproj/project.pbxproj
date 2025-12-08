@@ -17,6 +17,7 @@
 		9FE33BF22EE6D8D40001AAA5 /* GlacesTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BF12EE6D8D40001AAA5 /* GlacesTypes.swift */; };
 		9FE33BF42EE6DA590001AAA5 /* Parfum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BF32EE6DA590001AAA5 /* Parfum.swift */; };
 		9FE33BF62EE6DBC20001AAA5 /* GlacesOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BF52EE6DBC20001AAA5 /* GlacesOrder.swift */; };
+		9FE33BF82EE6E0B00001AAA5 /* StockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BF72EE6E0B00001AAA5 /* StockRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		9FE33BF12EE6D8D40001AAA5 /* GlacesTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlacesTypes.swift; sourceTree = "<group>"; };
 		9FE33BF32EE6DA590001AAA5 /* Parfum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parfum.swift; sourceTree = "<group>"; };
 		9FE33BF52EE6DBC20001AAA5 /* GlacesOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlacesOrder.swift; sourceTree = "<group>"; };
+		9FE33BF72EE6E0B00001AAA5 /* StockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				9FE33BF12EE6D8D40001AAA5 /* GlacesTypes.swift */,
 				9FE33BF32EE6DA590001AAA5 /* Parfum.swift */,
 				9FE33BF52EE6DBC20001AAA5 /* GlacesOrder.swift */,
+				9FE33BF72EE6E0B00001AAA5 /* StockRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FE33BF82EE6E0B00001AAA5 /* StockRepository.swift in Sources */,
 				9FE33BC82EE6CD300001AAA5 /* ContentView.swift in Sources */,
 				9FE33BF22EE6D8D40001AAA5 /* GlacesTypes.swift in Sources */,
 				9FE33BF42EE6DA590001AAA5 /* Parfum.swift in Sources */,
