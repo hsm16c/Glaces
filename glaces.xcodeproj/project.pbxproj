@@ -18,6 +18,7 @@
 		9FE33BF42EE6DA590001AAA5 /* Parfum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BF32EE6DA590001AAA5 /* Parfum.swift */; };
 		9FE33BF62EE6DBC20001AAA5 /* GlacesOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BF52EE6DBC20001AAA5 /* GlacesOrder.swift */; };
 		9FE33BF82EE6E0B00001AAA5 /* StockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BF72EE6E0B00001AAA5 /* StockRepository.swift */; };
+		9FE33BFB2EE6E7380001AAA5 /* CreateGlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BFA2EE6E7380001AAA5 /* CreateGlaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		9FE33BF32EE6DA590001AAA5 /* Parfum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parfum.swift; sourceTree = "<group>"; };
 		9FE33BF52EE6DBC20001AAA5 /* GlacesOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlacesOrder.swift; sourceTree = "<group>"; };
 		9FE33BF72EE6E0B00001AAA5 /* StockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRepository.swift; sourceTree = "<group>"; };
+		9FE33BFA2EE6E7380001AAA5 /* CreateGlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGlaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		9FE33BC42EE6CD300001AAA5 /* glaces */ = {
 			isa = PBXGroup;
 			children = (
+				9FE33BF92EE6E70E0001AAA5 /* Views */,
 				9FE33BF02EE6D87D0001AAA5 /* Model */,
 				9FE33BC52EE6CD300001AAA5 /* glacesApp.swift */,
 				9FE33BC72EE6CD300001AAA5 /* ContentView.swift */,
@@ -147,6 +150,14 @@
 				9FE33BF72EE6E0B00001AAA5 /* StockRepository.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9FE33BF92EE6E70E0001AAA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9FE33BFA2EE6E7380001AAA5 /* CreateGlaceView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +292,7 @@
 			files = (
 				9FE33BF82EE6E0B00001AAA5 /* StockRepository.swift in Sources */,
 				9FE33BC82EE6CD300001AAA5 /* ContentView.swift in Sources */,
+				9FE33BFB2EE6E7380001AAA5 /* CreateGlaceView.swift in Sources */,
 				9FE33BF22EE6D8D40001AAA5 /* GlacesTypes.swift in Sources */,
 				9FE33BF42EE6DA590001AAA5 /* Parfum.swift in Sources */,
 				9FE33BC62EE6CD300001AAA5 /* glacesApp.swift in Sources */,

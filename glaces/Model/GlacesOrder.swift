@@ -6,7 +6,7 @@ struct FlavorSelection: Identifiable {
     var scoops: Int
 }
 
-struct IceCreamOrder {
+struct GlacesOrder {
     var parfums: [FlavorSelection]
     var container: ContainerType
     var extras: Set<Extra>
