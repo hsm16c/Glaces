@@ -4,23 +4,21 @@ import SwiftUI
 
 struct CreateGlaceView: View {
     
-    
     @StateObject var repo = StockRepository()
-    
-    
     @State private var container: ContainerType = .cup
-    
-    
     @State private var extras: Set<Extra> = []
-    
-    
     @State private var selections: [FlavorSelection] = []
+    @State private var lastOrderPrice: Double = 0.0
+    
+    
+    @State private var showOrderAlert = false
     
     var body: some View {
         NavigationStack {
             Form {
                 
-                Section("Flavors") {
+                
+                Section {
                     ForEach(repo.parfums) { parfum in
                         FlavorSelectorRow(
                             parfum: parfum,
@@ -29,7 +27,20 @@ struct CreateGlaceView: View {
                             onDecrement: { decrementScoops(parfum: parfum) }
                         )
                     }
+                } header: {
+                    HStack {
+                        Text("Scoops flavours")
+                        
+                        Spacer()
+                        
+                        if let errorMessage {
+                            Text(errorMessage)
+                                .foregroundColor(.red)
+                                .font(.caption)
+                        }
+                    }
                 }
+                
                 
                 Section("Container") {
                     Picker("Container", selection: $container) {
@@ -39,6 +50,7 @@ struct CreateGlaceView: View {
                     }
                     .pickerStyle(.segmented)
                 }
+                
                 
                 Section("Extras") {
                     ForEach(Extra.allCases) { extra in
@@ -52,19 +64,29 @@ struct CreateGlaceView: View {
                     }
                 }
                 
+                
                 Section("Price") {
-                    Text(currentOrder.totalPrice, format: .currency(code: "EUR"))
+                    Text("\(currentOrder.totalPrice, format: .currency(code: "EUR"))")
                         .font(.headline)
                 }
-
+                
+                
                 Section {
                     Button("Create ice cream") {
-                        createOrder()
+                        createOrder()      // $ CHANGE
                     }
                     .disabled(!currentOrder.isValid)
                 }
+                
             }
             .navigationTitle("Create Ice Cream")
+            
+            
+            .alert("Ice cream created", isPresented: $showOrderAlert) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text("Total: \(lastOrderPrice, format: .currency(code: "EUR"))")
+            }
         }
     }
 }
@@ -72,7 +94,16 @@ struct CreateGlaceView: View {
 
 
 extension CreateGlaceView {
-
+    
+    
+    var errorMessage: String? {
+        if currentOrder.totalScoops > 5 {
+            return "too many scoops selected"
+        }
+        return nil
+    }
+    
+    
     var currentOrder: GlacesOrder {
         GlacesOrder(
             parfums: selections,
@@ -80,15 +111,19 @@ extension CreateGlaceView {
             extras: extras
         )
     }
- 
+    
+    
     func scoopsForFlavor(_ parfum: Parfum) -> Int {
         selections.first(where: { $0.parfum == parfum })?.scoops ?? 0
     }
     
+    
     func incrementScoops(parfum: Parfum) {
+        let currentScoops = scoopsForFlavor(parfum)
+        let totalScoops = currentOrder.totalScoops
         
         guard scoopsForFlavor(parfum) < 5 else { return }
-        
+        guard totalScoops < 5 else { return }
         guard scoopsForFlavor(parfum) < parfum.availableScoops else { return }
         
         if let index = selections.firstIndex(where: { $0.parfum == parfum }) {
@@ -98,22 +133,29 @@ extension CreateGlaceView {
         }
     }
     
+    
     func decrementScoops(parfum: Parfum) {
-        
         guard let index = selections.firstIndex(where: { $0.parfum == parfum }) else { return }
         
         selections[index].scoops -= 1
-
+        
         if selections[index].scoops <= 0 {
             selections.remove(at: index)
         }
     }
     
+    
     func createOrder() {
-        print("Order created → \(currentOrder.totalPrice) €")
+        lastOrderPrice = currentOrder.totalPrice
+        for selection in selections {
+                    repo.consumeScoops(parfum: selection.parfum, scoops: selection.scoops)
+                }
+        showOrderAlert = true
+        selections = []
+                extras = []
+                container = .cup
     }
 }
-
 
 
 struct FlavorSelectorRow: View {
@@ -131,11 +173,10 @@ struct FlavorSelectorRow: View {
                 .frame(width: 50, height: 50)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             
-            
             VStack(alignment: .leading) {
                 Text(parfum.name)
                     .font(.headline)
-
+                
                 if parfum.isEmpty {
                     Text("Out of stock")
                         .foregroundColor(.red)
@@ -148,8 +189,8 @@ struct FlavorSelectorRow: View {
             }
             
             Spacer()
+            
             HStack {
-               
                 Button("-") { onDecrement() }
                     .buttonStyle(.bordered)
                 
@@ -159,6 +200,12 @@ struct FlavorSelectorRow: View {
                 Button("+") { onIncrement() }
                     .buttonStyle(.bordered)
                     .disabled(parfum.isEmpty || scoops >= parfum.availableScoops)
+                
+                
+                if parfum.isEmpty {
+                    Image(systemName: "exclamationmark.circle.fill")
+                        .foregroundColor(.red)
+                }
             }
         }
     }
