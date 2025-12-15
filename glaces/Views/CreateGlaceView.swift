@@ -4,13 +4,14 @@ import SwiftUI
 
 struct CreateGlaceView: View {
     
-    @StateObject var repo = StockRepository()
+    @StateObject var repo: StockRepositoryDummyImpl
     @State private var container: ContainerType = .cup
     @State private var extras: Set<Extra> = []
     @State private var selections: [FlavorSelection] = []
     @State private var lastOrderPrice: Double = 0.0
     
-    
+    @State private var selectedEmptyParfum: Parfum? = nil
+    @State private var showFlavorEmptyView = false
     @State private var showOrderAlert = false
     
     var body: some View {
@@ -24,7 +25,11 @@ struct CreateGlaceView: View {
                             parfum: parfum,
                             scoops: scoopsForFlavor(parfum),
                             onIncrement: { incrementScoops(parfum: parfum) },
-                            onDecrement: { decrementScoops(parfum: parfum) }
+                            onDecrement: { decrementScoops(parfum: parfum) },
+                            onEmptyTapped: {
+                                    selectedEmptyParfum = parfum
+                                    showFlavorEmptyView = true
+                                }
                         )
                     }
                 } header: {
@@ -81,6 +86,12 @@ struct CreateGlaceView: View {
             }
             .navigationTitle("Create Ice Cream")
             
+            .navigationDestination(isPresented: $showFlavorEmptyView) {
+                if let parfum = selectedEmptyParfum {
+                    FlavorEmptyView(parfum: parfum)
+                }
+            }
+
             
             .alert("Ice cream created", isPresented: $showOrderAlert) {
                 Button("OK", role: .cancel) { }
@@ -164,6 +175,7 @@ struct FlavorSelectorRow: View {
     let scoops: Int
     let onIncrement: () -> Void
     let onDecrement: () -> Void
+    let onEmptyTapped: () -> Void
     
     var body: some View {
         HStack {
@@ -203,8 +215,14 @@ struct FlavorSelectorRow: View {
                 
                 
                 if parfum.isEmpty {
-                    Image(systemName: "exclamationmark.circle.fill")
-                        .foregroundColor(.red)
+                    Button{
+                        onEmptyTapped()
+                    }label: {
+                        Image(systemName: "exclamationmark.circle.fill")
+                            .foregroundColor(.red)
+                    }
+                    .buttonStyle(.plain)
+                    
                 }
             }
         }

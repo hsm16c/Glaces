@@ -1,8 +1,14 @@
-//
-//  AppInjector.swift
-//  glaces
-//
-//  Created by CHAHIDI on 12/12/2025.
-//
-
 import Foundation
+
+
+final class AppInjector {
+    
+    static let shared = AppInjector()
+    
+    private init() {}
+    
+    func provideStockRepository() -> StockRepositoryDummyImpl {
+        return StockRepositoryDummyImpl()
+    }
+    let mailService = MailServiceImpl()
+}

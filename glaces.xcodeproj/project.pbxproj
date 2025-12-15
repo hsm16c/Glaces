@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F70FADA2EF001F90038C246 /* MailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F70FAD92EF001F90038C246 /* MailState.swift */; };
+		9F70FADC2EF002170038C246 /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F70FADB2EF002170038C246 /* MailService.swift */; };
+		9F70FADE2EF0023E0038C246 /* MailServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F70FADD2EF0023E0038C246 /* MailServiceImpl.swift */; };
+		9F70FAE02EF004300038C246 /* MailComposerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F70FADF2EF004300038C246 /* MailComposerSheet.swift */; };
+		9F754AD52EEC76D600C05CA5 /* FlavorEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F754AD42EEC76D600C05CA5 /* FlavorEmptyView.swift */; };
+		9F754AD82EEC7F6600C05CA5 /* FileStockRepositoryDummyImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F754AD72EEC7F6600C05CA5 /* FileStockRepositoryDummyImpl.swift */; };
+		9F754ADB2EEC83A500C05CA5 /* AppInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F754ADA2EEC83A500C05CA5 /* AppInjector.swift */; };
 		9FE33BC62EE6CD300001AAA5 /* glacesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BC52EE6CD300001AAA5 /* glacesApp.swift */; };
 		9FE33BC82EE6CD300001AAA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE33BC72EE6CD300001AAA5 /* ContentView.swift */; };
 		9FE33BCA2EE6CD320001AAA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FE33BC92EE6CD320001AAA5 /* Assets.xcassets */; };
@@ -39,6 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F70FAD92EF001F90038C246 /* MailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailState.swift; sourceTree = "<group>"; };
+		9F70FADB2EF002170038C246 /* MailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
+		9F70FADD2EF0023E0038C246 /* MailServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailServiceImpl.swift; sourceTree = "<group>"; };
+		9F70FADF2EF004300038C246 /* MailComposerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposerSheet.swift; sourceTree = "<group>"; };
+		9F754AD42EEC76D600C05CA5 /* FlavorEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorEmptyView.swift; sourceTree = "<group>"; };
+		9F754AD72EEC7F6600C05CA5 /* FileStockRepositoryDummyImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStockRepositoryDummyImpl.swift; sourceTree = "<group>"; };
+		9F754ADA2EEC83A500C05CA5 /* AppInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjector.swift; sourceTree = "<group>"; };
 		9FE33BC22EE6CD300001AAA5 /* glaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = glaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE33BC52EE6CD300001AAA5 /* glacesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = glacesApp.swift; sourceTree = "<group>"; };
 		9FE33BC72EE6CD300001AAA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +96,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F754AD62EEC7DB300C05CA5 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				9FE33BF72EE6E0B00001AAA5 /* StockRepository.swift */,
+				9F754AD72EEC7F6600C05CA5 /* FileStockRepositoryDummyImpl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		9F754AD92EEC838C00C05CA5 /* Injector */ = {
+			isa = PBXGroup;
+			children = (
+				9F754ADA2EEC83A500C05CA5 /* AppInjector.swift */,
+			);
+			path = Injector;
+			sourceTree = "<group>";
+		};
+		9F754ADC2EEC88C800C05CA5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9F70FAD92EF001F90038C246 /* MailState.swift */,
+				9F70FADB2EF002170038C246 /* MailService.swift */,
+				9F70FADD2EF0023E0038C246 /* MailServiceImpl.swift */,
+				9F70FADF2EF004300038C246 /* MailComposerSheet.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		9FE33BB92EE6CD300001AAA5 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +147,9 @@
 		9FE33BC42EE6CD300001AAA5 /* glaces */ = {
 			isa = PBXGroup;
 			children = (
+				9F754ADC2EEC88C800C05CA5 /* Services */,
+				9F754AD92EEC838C00C05CA5 /* Injector */,
+				9F754AD62EEC7DB300C05CA5 /* Repository */,
 				9FE33BF92EE6E70E0001AAA5 /* Views */,
 				9FE33BF02EE6D87D0001AAA5 /* Model */,
 				9FE33BC52EE6CD300001AAA5 /* glacesApp.swift */,
@@ -147,7 +192,6 @@
 				9FE33BF12EE6D8D40001AAA5 /* GlacesTypes.swift */,
 				9FE33BF32EE6DA590001AAA5 /* Parfum.swift */,
 				9FE33BF52EE6DBC20001AAA5 /* GlacesOrder.swift */,
-				9FE33BF72EE6E0B00001AAA5 /* StockRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				9FE33BFA2EE6E7380001AAA5 /* CreateGlaceView.swift */,
+				9F754AD42EEC76D600C05CA5 /* FlavorEmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,11 +335,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F70FAE02EF004300038C246 /* MailComposerSheet.swift in Sources */,
+				9F70FADC2EF002170038C246 /* MailService.swift in Sources */,
 				9FE33BF82EE6E0B00001AAA5 /* StockRepository.swift in Sources */,
 				9FE33BC82EE6CD300001AAA5 /* ContentView.swift in Sources */,
 				9FE33BFB2EE6E7380001AAA5 /* CreateGlaceView.swift in Sources */,
+				9F70FADA2EF001F90038C246 /* MailState.swift in Sources */,
+				9F754ADB2EEC83A500C05CA5 /* AppInjector.swift in Sources */,
 				9FE33BF22EE6D8D40001AAA5 /* GlacesTypes.swift in Sources */,
+				9F754AD52EEC76D600C05CA5 /* FlavorEmptyView.swift in Sources */,
+				9F70FADE2EF0023E0038C246 /* MailServiceImpl.swift in Sources */,
 				9FE33BF42EE6DA590001AAA5 /* Parfum.swift in Sources */,
+				9F754AD82EEC7F6600C05CA5 /* FileStockRepositoryDummyImpl.swift in Sources */,
 				9FE33BC62EE6CD300001AAA5 /* glacesApp.swift in Sources */,
 				9FE33BF62EE6DBC20001AAA5 /* GlacesOrder.swift in Sources */,
 			);
